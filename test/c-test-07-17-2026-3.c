@@ -48,7 +48,7 @@ int main(void) {
 		return 1;
 	}
 	if (strlen((char*)p.arr[0][0]) == 0) {
-                free_array(&p.arr, n);
+        free_array(&p.arr, n);
 		return 1;
 	}
 	printf("%s\n", (char*)p.arr[0][0]);
