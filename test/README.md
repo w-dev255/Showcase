@@ -1,6 +1,7 @@
 Void pointers usage test: c-test-07-17-2026-0.c, c-test-07-17-2026-1.c, c-test-07-17-2026-2.c, c-test-07-17-2026-3.c
 
 Results:
+
 ---
 
 test: 0
@@ -24,11 +25,13 @@ c-test-07-17-2026-0.c:16:21: warning:
 2 warnings generated.
 
 test
+
 test
 
 ---
 
 ---
+
 test: 1
 
 date: 07/17/2026
@@ -60,10 +63,13 @@ c-test-07-17-2026-1.c:26:29: warning:
 4 warnings generated.
 
 test
+
 test
+
 ---
 
 ---
+
 test: 2
 
 date: 07/17/2026
@@ -101,12 +107,15 @@ c-test-07-17-2026-2.c:8:1: note:
 4 warnings generated.
 
 test
+
 test
 
 ==23535==WARNING: Can't read from symbolizer at fd 3
+
 ---
 
 ---
+
 test: 3
 
 date: 07/17/2026
@@ -155,7 +164,9 @@ c-test-07-17-2026-3.c:28:1: note: declare
 5 warnings generated.
 
 test
+
 test
 
 ==25059==WARNING: Can't read from symbolizer at fd 3
+
 ---
