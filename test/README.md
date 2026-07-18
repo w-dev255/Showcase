@@ -2,6 +2,7 @@ Void pointers usage test: c-test-07-17-2026-0.c, c-test-07-17-2026-1.c, c-test-0
 
 Results:
 ---
+
 test: 0
 
 date: 07/17/2026
@@ -24,6 +25,7 @@ c-test-07-17-2026-0.c:16:21: warning:
 
 test
 test
+
 ---
 
 ---
