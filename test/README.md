@@ -21,6 +21,7 @@ c-test-07-17-2026-0.c:16:21: warning:
    16 |                 p.arr[a] = malloc(n * sizeof(void*));
       |                                   ^ ~
 2 warnings generated.
+
 test
 test
 ---
@@ -55,6 +56,7 @@ c-test-07-17-2026-1.c:26:29: warning:
    26 |   ...p.arr[a][b][c] = malloc(n * sizeof(void*));
       |                              ^ ~
 4 warnings generated.
+
 test
 test
 ---
@@ -95,6 +97,7 @@ c-test-07-17-2026-2.c:8:1: note:
       | ^
       | static
 4 warnings generated.
+
 test
 test
 
@@ -148,6 +151,7 @@ c-test-07-17-2026-3.c:28:1: note: declare
       | ^
       | static
 5 warnings generated.
+
 test
 test
 
