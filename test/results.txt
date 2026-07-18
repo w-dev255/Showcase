@@ -1,0 +1,154 @@
+Void pointers usage test: c-test-07-17-2026-0.c, c-test-07-17-2026-1.c, c-test-07-17-2026-2.c, c-test-07-17-2026-3.c
+
+Results:
+
+---
+test: 0
+
+date: 07/17/2026
+
+file: c-test-07-17-2026-0.c
+
+command: clang -g -O1 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wformat-security -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code -fsanitize=address,undefined,leak -fno-omit-frame-pointer -fno-optimize-sibling-calls c-test-07-17-2026-0.c -o c-test-07-17-2026-0 && ASAN_OPTIONS=detect_leaks=1:abort_on_error=1:strict_string_checks=1 && ./c-test-07-17-2026-0
+
+output: c-test-07-17-2026-0.c:11:17: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   11 |         p.arr = malloc(n * sizeof(void**));
+      |                        ^ ~
+c-test-07-17-2026-0.c:16:21: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   16 |                 p.arr[a] = malloc(n * sizeof(void*));
+      |                                   ^ ~
+2 warnings generated.
+test
+test
+---
+
+---
+test: 1
+
+date: 07/17/2026
+
+file: c-test-07-17-2026-1.c
+
+command: clang -g -O1 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wformat-security -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code -fsanitize=address,undefined,leak -fno-omit-frame-pointer -fno-optimize-sibling-calls c-test-07-17-2026-1.c -o c-test-07-17-2026-1 && ASAN_OPTIONS=detect_leaks=1:abort_on_error=1:strict_string_checks=1 && ./c-test-07-17-2026-1
+
+output: c-test-07-17-2026-1.c:11:17: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   11 |         p.arr = malloc(n * sizeof(void***));
+      |                        ^ ~
+c-test-07-17-2026-1.c:16:21: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   16 |                 p.arr[a] = malloc(n * sizeof(void**));
+      |                                   ^ ~
+c-test-07-17-2026-1.c:21:25: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   21 |                         p.arr[a][b] = malloc(n * sizeof(void*));
+      |                                              ^ ~
+c-test-07-17-2026-1.c:26:29: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   26 |   ...p.arr[a][b][c] = malloc(n * sizeof(void*));
+      |                              ^ ~
+4 warnings generated.
+test
+test
+---
+
+---
+test: 2
+
+date: 07/17/2026
+
+file: c-test-07-17-2026-2.c
+
+command: clang -g -O1 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wformat-security -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code -fsanitize=address,undefined,leak -fno-omit-frame-pointer -fno-optimize-sibling-calls c-test-07-17-2026-2.c -o c-test-07-17-2026-2 && ASAN_OPTIONS=detect_leaks=1:abort_on_error=1:strict_string_checks=1 && ./c-test-07-17-2026-2
+
+output: c-test-07-17-2026-2.c:9:16: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+    9 |         *arr = malloc(n * sizeof(void**));
+      |                       ^ ~
+c-test-07-17-2026-2.c:14:22: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   14 |                 (*arr)[a] = malloc(n * sizeof(void*));
+      |                                    ^ ~
+c-test-07-17-2026-2.c:19:26: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   19 |   ...(*arr)[a][b] = malloc(n * sizeof(void*));
+      |                            ^ ~
+c-test-07-17-2026-2.c:8:5: warning:
+      no previous prototype for function 'start_array'
+      [-Wmissing-prototypes]
+    8 | int start_array(void**** arr, int n) {
+      |     ^
+c-test-07-17-2026-2.c:8:1: note:
+      declare 'static' if the function is not intended
+      to be used outside of this translation unit
+    8 | int start_array(void**** arr, int n) {
+      | ^
+      | static
+4 warnings generated.
+test
+test
+==23535==WARNING: Can't read from symbolizer at fd 3
+---
+
+---
+test: 3
+
+date: 07/17/2026
+
+file: c-test-07-17-2026-3.c
+
+command: clang -g -O1 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -Wformat-security -Wstrict-prototypes -Wmissing-prototypes -Wunreachable-code -fsanitize=address,undefined,leak -fno-omit-frame-pointer -fno-optimize-sibling-calls c-test-07-17-2026-3.c -o c-test-07-17-2026-3 && ASAN_OPTIONS=detect_leaks=1:abort_on_error=1:strict_string_checks=1 && ./c-test-07-17-2026-3
+
+output: c-test-07-17-2026-3.c:9:16: warning: implicit
+      conversion changes signedness: 'int' to 'unsigned long'
+      [-Wsign-conversion]
+    9 |         *arr = malloc(n * sizeof(void**));
+      |                       ^ ~
+c-test-07-17-2026-3.c:14:22: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   14 |                 (*arr)[a] = malloc(n * sizeof(void*));
+      |                                    ^ ~
+c-test-07-17-2026-3.c:19:26: warning:
+      implicit conversion changes signedness: 'int' to
+      'unsigned long' [-Wsign-conversion]
+   19 |                         (*arr)[a][b] = malloc(n * sizeof(void*));
+      |                                               ^ ~
+c-test-07-17-2026-3.c:8:5: warning: no
+      previous prototype for function 'start_array'
+      [-Wmissing-prototypes]
+    8 | int start_array(void**** arr, int n) {
+      |     ^
+c-test-07-17-2026-3.c:8:1: note: declare
+      'static' if the function is not intended to be used outside
+      of this translation unit
+    8 | int start_array(void**** arr, int n) {
+      | ^
+      | static
+c-test-07-17-2026-3.c:28:5: warning: no
+      previous prototype for function 'free_array'
+      [-Wmissing-prototypes]
+   28 | int free_array(void**** arr, int n) {
+      |     ^
+c-test-07-17-2026-3.c:28:1: note: declare
+      'static' if the function is not intended to be used outside
+      of this translation unit
+   28 | int free_array(void**** arr, int n) {
+      | ^
+      | static
+5 warnings generated.
+test
+test
+==25059==WARNING: Can't read from symbolizer at fd 3
+---
